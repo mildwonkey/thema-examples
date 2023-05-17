@@ -9,7 +9,6 @@ import (
 	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/cuecontext"
 	"github.com/grafana/thema"
-	"github.com/grafana/thema/load"
 	"github.com/grafana/thema/vmux"
 )
 
@@ -23,16 +22,7 @@ func main() {
 	exampleJSON, _ := ioutil.ReadFile("example.json")
 	exdata, _ := vmux.NewJSONCodec("example.json").Decode(ctx, exampleJSON)
 
-	// A secondary issue (which will have it's own exmaple elsewhere): I'm
-	// having trouble getting the generated Lineage() function working (with or
-	// without a lineage path in the cue file), so this is the hacky manual
-	// version.
-	bi, err := load.InstanceWithThema(LocalSchemaFS, "")
-	exitIf(err)
-	v := ctx.BuildInstance(bi)
-	// get the lineage and a schema, and validate the example.json data
-	lineage := v.LookupPath(cue.ParsePath("lineage"))
-	lin, err := thema.BindLineage(lineage, rt)
+	lin, err := Lineage(rt)
 	exitIf(err)
 	sch00, err := lin.Schema(thema.SV(0, 0)) // we wouldn't normally hardcode this; just for the example
 	exitIf(err)
