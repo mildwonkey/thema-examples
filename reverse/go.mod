@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	cuelang.org/go v0.5.0
-	github.com/grafana/thema v0.0.0-20230518104143-3adcb5f341a8
+	github.com/grafana/thema v0.0.0-20230515190554-2165e14636e4
 )
 
 require (
