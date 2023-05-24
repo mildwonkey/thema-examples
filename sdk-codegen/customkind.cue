@@ -1,3 +1,6 @@
+// copied directly (modified package name):
+// https://github.com/grafana/grafana-app-sdk/blob/ff0c8b6bc9ed309ff4c74ca732e0a65912b9dd33/codegen/testing/cue/customkind.cue
+
 package main
 
 import (

@@ -5,3 +5,5 @@ I've been using `thema lineage gen` in my local thema experimentation, but that'
 
 Issue:
 running `grafana-app-sdk generate -c . ` results in an absolutely lovely `panic: unreachable...?` error. I followed the stacktrace to this line: https://github.com/grafana/cuetsy/blob/main/generator.go#L1242
+
+The customkind.cue file is copied from https://github.com/grafana/grafana-app-sdk/blob/ff0c8b6bc9ed309ff4c74ca732e0a65912b9dd33/codegen/testing/cue/customkind.cue.
