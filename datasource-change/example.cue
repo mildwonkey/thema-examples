@@ -19,7 +19,7 @@ schemas: [
 		schema:
 		{
 			datasource: { // datasource is now an object
-				type?: string // this is a required field, which is probably nonsense!
+				type: string // this is a required field, which is probably nonsense!
 				uid?:  string
 			}
 		},

@@ -7,7 +7,7 @@ package main
 // Example defines model for example.
 type Example struct {
 	Datasource struct {
-		Type *string `json:"type,omitempty"`
+		Type string  `json:"type"`
 		Uid  *string `json:"uid,omitempty"`
 	} `json:"datasource"`
 }
